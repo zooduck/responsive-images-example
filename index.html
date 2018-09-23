@@ -29,6 +29,16 @@
             ol {
                 list-style-type: "A"
             }
+            aside {
+                margin: 0 40px;
+                background-color: aliceblue;
+            }
+            aside p {
+                padding: 10px 10px 0 10px;
+            }
+            aside p:last-of-type {
+                padding-bottom: 10px;
+            }
             .hero-image {
                 background-color: cyan;
                 padding: 10px;
@@ -76,10 +86,17 @@
             might be deemed overkill (adding complexity to the process with little or no benefit).
         </p>
 
-        <p>
-            You will need to resize the browser (and in some cases refresh the page) to see how it works.
-            <cite>For best results, I recommend using your browser's device tools and disabling the cache</cite>.
-        </p>
+        <aside>
+            <p>
+                Try viewing this page on a mobile device and watch how the images change when you switch between portrait and landscape modes.
+            </p>
+            <p>
+                If you are viewing this page on a desktop, I would recommend using your browser's device tools and disabling the cache.
+            </p>
+            <p>
+                (Failing that, you could just manually resize the browser to observe which images get served at different viewport widths).
+            </p>
+        </aside>
        
         <h2 id="hero_image_a">Hero Image A (method 1)</h2>
 
@@ -137,6 +154,7 @@
                 <img
                     src="img/1920/DSC_4331__1920w_.JPG"
                     alt="Kylie Minogue with The Muppets at the O2 Arena, London 2018">
+                <figcaption>Photo by Wesley Pumpkinhead</figcaption>
             </picture>
         </div>
 
@@ -214,6 +232,7 @@
                        1024px"
                 src="img/1920/DSC_4331__1920w_.JPG"
                 alt="Kylie Minogue with The Muppets at the O2 Arena, London 2018">
+            <figcaption>Photo by Wesley Pumpkinhead</figcaption>
         </div>
 
         <!-- NOTE: 
