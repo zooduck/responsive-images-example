@@ -10,6 +10,9 @@
                 box-sizing: border-box;
             }
             body {
+                margin: 0 auto;
+                max-width: 1024px;
+                padding: 10px;
                 font-family: Calibri, sans-serif;
             }
             img {
@@ -38,6 +41,13 @@
             }
             aside p:last-of-type {
                 padding-bottom: 10px;
+            }
+            h2 + div {
+                margin-top: -15px;
+                background-color: #333;
+                color: #fff;
+                padding: 5px;
+                font-size: 1.2em;
             }
             .hero-image {
                 background-color: cyan;
@@ -98,7 +108,8 @@
             </p>
         </aside>
        
-        <h2 id="hero_image_a">Hero Image A (method 1)</h2>
+        <h2 id="hero_image_a">Hero Image A</h2>
+        <div>&lt;picture&gt; + &lt;source&gt; + srcset</div>
 
         <p>
             Here we are using both <strong>Art Direction</strong> <cite>and</cite> <strong>Resolution Switching</strong>. The browser is <cite>directed</cite> to load a specific image file
@@ -158,7 +169,8 @@
             </picture>
         </div>
 
-        <h2 id='hero_image_b'>Hero Image B (method 2)</h2>
+        <h2 id='hero_image_b'>Hero Image B</h2>
+        <div>&lt;img&gt; + srcset + sizes</div>
 
         <p>Here we are using <strong>Resolution Switching</strong> <cite>only</cite>. The browser decides which image is best,
             using the width descriptors at the end of each file path in the <code>srcset</code>, along with  the
@@ -242,14 +254,18 @@
             - 1 image per row for mobile portrait
         -->
         <h2 id="thumbnails">Thumbnails</h2>
+        <div>&lt;img&gt;</div>
 
         <p>
             Here we are using <strong>CSS</strong> <cite>only</cite>.
         </p>
         <p>
-            In this instance (where we have a very small file size, and we know that we are never going to
-            display the image at a greater scale than its true width) it is perfectly acceptable to use a single image,
-            and just change the number of columns from 3 down to 1 for mobile portrait modes.
+            In this instance, we have an image that is just 455 x 341 pixels with a file size of just 70 KB.
+        </p>
+        <p>
+            Our layout dictates that the image will never occupy a width greater than 455 pixels on the page, so it
+            makes more sense to just use the standard <code>&lt;img&gt;</code> element and <code>src</code> attribute
+            instead.
         </p>
 <pre>
 &lt;style&gt;
